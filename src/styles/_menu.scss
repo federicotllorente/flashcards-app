@@ -1,0 +1,31 @@
+.menu {
+    width: 90vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    background-color: $darkColor;
+    color: $altLightColor;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 0 20px 10px $darkColorWOpacity;
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        button {
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            margin-right: 20px;
+            img {
+                width: 20px;
+            }
+        }
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        a {
+            background-color: #000;
+        }
+    }
+}

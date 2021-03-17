@@ -1,0 +1,66 @@
+// Colors
+$primaryColor: #cb3840;
+$primaryColorWOpacity: #cb383f62;
+$altPrimaryColor: #1c7664;
+$secondaryColor: #013460;
+$secondaryColorWOpacity: #01346065;
+$darkColor: #2e303f;
+$darkColorWOpacity: #2e303f59;
+$altDarkColor: #000000;
+$lightColor: #e4c5ac;
+$altLightColor: #f9f3ef;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+$mainFontSize: 18px;
+$mobileFontSize: 15px;
+$h1FontSize: 32px;
+$h2FontSize: 22px;
+$hugeFontSize: 42px;
+$titleFontFamily: "Poppins", sans-serif;
+$mainFontFamily: "Roboto", sans-serif;
+
+// Breakpoints
+$breakpointMobile: 425px;
+$breakpointTablet: 820px;
+$breakpointDesktop: 1024px;
+
+// Reset default styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: $altLightColor;
+}
+
+body {
+    color: $darkColor;
+    font-family: $mainFontFamily;
+    font-size: $mainFontSize;
+    font-weight: 500;
+    line-height: 1;
+    a {
+        border-radius: 3px;
+        color: $primaryColor;
+        text-decoration: none;
+        transition: 0.2s;
+        &:hover {
+            background-color: $primaryColorWOpacity;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+    }
+    h1 {
+        font-size: $h1FontSize;
+        font-weight: 500;
+    }
+    h2, h3, h4, h5 {
+        font-size: $h2FontSize;
+        font-weight: 500;
+    }
+}
+
+// Components import
+@import '_menu.scss';
