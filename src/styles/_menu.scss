@@ -1,12 +1,22 @@
 .menu {
     width: 90vw;
     height: 100vh;
+    padding: 0 0 20px;
     position: fixed;
     z-index: 2;
     background-color: $darkColor;
     color: $altLightColor;
     border-radius: 0 20px 20px 0;
     box-shadow: 0 0 20px 10px $darkColorWOpacity;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    a {
+        color: $altLightColor;
+        font-weight: 600;
+        &:hover {
+            background-color: $secondaryColor;
+        }
+    }
     &__header {
         display: flex;
         align-items: center;
@@ -25,7 +35,26 @@
         display: flex;
         flex-direction: column;
         a {
-            background-color: #000;
+            padding: 10px 20px;
+            margin-right: 30px;
+            font-family: $titleFontFamily;
+            font-weight: initial;
+            border-radius: 0;
+            &.currentPage {
+                padding: 20px;
+                margin-bottom: 10px;
+                background-color: $altLightColor;
+                color: $darkColor;
+                border-radius: 0 10px 10px 0;
+            }
+            &:hover {
+                background-color: $lightColor;
+            }
+        }
+    }
+    &__footer {
+        p {
+            padding: 20px 30px 10px 20px;
         }
     }
 }
