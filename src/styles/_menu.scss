@@ -10,12 +10,20 @@
     box-shadow: 0 0 20px 10px $darkColorWOpacity;
     box-sizing: border-box;
     overflow-y: scroll;
+    animation: openMenu 1s ease;
     a {
         color: $altLightColor;
         font-weight: 600;
         &:hover {
             background-color: $secondaryColor;
         }
+    }
+    &--closed {
+        width: 100vw;
+        height: fit-content;
+        padding: 0;
+        border-radius: 0;
+        animation: none;
     }
     &__header {
         display: flex;

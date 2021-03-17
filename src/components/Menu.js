@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import CloseMenuButton from '../img/Close Burger Menu Button.png';
-import Logo from '../img/Logo light.png';
+import MenuHeaderViews from '../views/MenuHeaderViews';
+import MenuViews from '../views/MenuViews';
 
 const Menu = () => {
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
     const menuItems = [
         { id: 1, name: 'Dashboard', path: '/' },
         { id: 2, name: 'Flashcards', path: '/flashcards' },
@@ -13,28 +14,25 @@ const Menu = () => {
         { id: 5, name: 'Contact', path: '/contact' }
     ];
     const currentPage = useLocation();
+
+    const handleOpenMenu = () => {
+        setMenuIsOpen(true);
+    };
+    const handleCloseMenu = () => {
+        setMenuIsOpen(false);
+    };
+
     return (
-        <div className="menu">
-            <div className="menu__header">
-                <button id="close_menu_btn">
-                    <img src={CloseMenuButton} alt="Close Menu Button" />
-                </button>
-                <img src={Logo} alt="Logo" />
-            </div>
-            <div className="menu__links">
-                {menuItems.map(el =>
-                    (currentPage.pathname === el.path) ? (
-                        <Link key={el.id} className="currentPage" to={el.path}>{el.name}</Link>
-                    ) : (
-                        <Link key={el.id} to={el.path}>{el.name}</Link>
-                    )
-                )}
-            </div>
-            <div className="menu__footer">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis quasi obcaecati nisi ut provident, reprehenderit porro praesentium sunt? Nostrum, eum.</p>
-                <p>Copyright <a href="https://www.github.com/federicotllorente/" target="_blank" rel="noreferrer">Federico Tejedor Llorente</a></p>
-            </div>
-        </div>
+        <React.Fragment>
+            <MenuHeaderViews handleOpenMenu={handleOpenMenu} />
+            {(menuIsOpen) && (
+                <MenuViews
+                    menuItems={menuItems}
+                    currentPage={currentPage}
+                    handleCloseMenu={handleCloseMenu}
+                />
+            )}
+        </React.Fragment>
     );
 }
 
