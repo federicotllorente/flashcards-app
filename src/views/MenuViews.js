@@ -11,7 +11,7 @@ const MenuViews = props => {
                 <button id="close_menu_btn" onClick={props.handleCloseMenu}>
                     <img src={CloseMenuButton} alt="Close Menu Button" />
                 </button>
-                <img src={Logo} alt="Logo" />
+                <img className="menu__header__logo" src={Logo} alt="Logo" />
             </div>
             <div className="menu__links">
                 {props.menuItems.map(el =>

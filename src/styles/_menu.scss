@@ -3,10 +3,10 @@
     height: 100vh;
     padding: 0 0 20px;
     position: fixed;
-    z-index: 2;
+    top: 0;
+    z-index: 3;
     background-color: $darkColor;
     color: $altLightColor;
-    border-radius: 0 20px 20px 0;
     box-shadow: 0 0 20px 10px $darkColorWOpacity;
     box-sizing: border-box;
     overflow-y: scroll;
@@ -22,21 +22,50 @@
         width: 100vw;
         height: fit-content;
         padding: 0;
-        border-radius: 0;
+        z-index: 2;
         animation: none;
+        a {
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
     &__header {
         display: flex;
         align-items: center;
         padding: 20px;
         button {
+            margin-right: 20px;
             background-color: transparent;
             color: transparent;
             border: none;
-            margin-right: 20px;
             img {
                 width: 20px;
             }
+        }
+        &__logo {
+            height: 45px;
+        }
+        &__profile {
+            width: 30px;
+            height: 30px;
+            background-color: $altLightColor;
+            border-radius: 10px;
+            overflow: hidden;
+            a {
+                
+                img {
+                    width: 30px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    &--closed &__header {
+        justify-content: space-between;
+        align-items: center;
+        button {
+            margin-right: 0;
         }
     }
     &__links {

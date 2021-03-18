@@ -10,18 +10,17 @@ const Menu = () => {
         { id: 1, name: 'Dashboard', path: '/' },
         { id: 2, name: 'Flashcards', path: '/flashcards' },
         { id: 3, name: 'Practice', path: '/practice' },
-        { id: 4, name: 'Settings', path: '/settings' },
-        { id: 5, name: 'Contact', path: '/contact' }
+        { id: 4, name: 'Profile', path: '/profile' },
+        { id: 5, name: 'Settings', path: '/settings' },
+        { id: 6, name: 'Contact', path: '/contact' }
     ];
     const currentPage = useLocation();
-
     const handleOpenMenu = () => {
         setMenuIsOpen(true);
     };
     const handleCloseMenu = () => {
         setMenuIsOpen(false);
     };
-
     return (
         <React.Fragment>
             <MenuHeaderViews handleOpenMenu={handleOpenMenu} />

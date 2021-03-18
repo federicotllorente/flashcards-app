@@ -36,6 +36,7 @@ html {
 }
 
 body {
+    margin-top: 88px;
     color: $darkColor;
     font-family: $mainFontFamily;
     font-size: $mainFontSize;
@@ -52,10 +53,12 @@ body {
         }
     }
     h1 {
+        font-family: $titleFontFamily;
         font-size: $h1FontSize;
         font-weight: 500;
     }
     h2, h3, h4, h5 {
+        font-family: $titleFontFamily;
         font-size: $h2FontSize;
         font-weight: 500;
     }
