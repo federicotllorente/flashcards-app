@@ -76,6 +76,11 @@ $breakpointDesktop: 1024px;
     background-color: $primaryColor;
     box-shadow: 0 0 20px 0 $primaryColorWOpacity;
 }
+@mixin blue_button {
+    @include green_button;
+    background-color: $secondaryColor;
+    box-shadow: 0 0 20px 0 $secondaryColorWOpacity;
+}
 
 // Reset default styles
 * {

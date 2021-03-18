@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { categoryList } from '../db';
+
 const Categories = () => {
-    const categoryList = [
-        { id: 1, name: 'Category name 1', path: '/cat1', cards: 3 },
-        { id: 2, name: 'Category name 2', path: '/cat2', cards: 5 },
-        { id: 3, name: 'Category name 3', path: '/cat3', cards: 0 },
-        { id: 4, name: 'Category name 4', path: '/cat4', cards: 1 }
-    ];
     return (
         <div className="category">
             <h1>This is your flashcard collection</h1>
             <div className="category__header">
                 <h2>Categories</h2>
-                <button>Create a new category</button>
+                <button className="category__header__add_button">
+                    Create a new category
+                </button>
             </div>
             <div className="category__list">
                 {categoryList.map(el => (
