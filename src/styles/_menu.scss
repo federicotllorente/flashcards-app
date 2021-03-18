@@ -71,21 +71,52 @@
     &__links {
         display: flex;
         flex-direction: column;
-        a {
+        div {
             padding: 10px 20px;
             margin-right: 30px;
-            font-family: $titleFontFamily;
-            font-weight: initial;
             border-radius: 0;
+            a {
+                font-family: $titleFontFamily;
+                font-weight: initial;
+                transition: 0.2s;
+                &:hover {
+                    color: $lightColor;
+                }
+            }
             &.currentPage {
                 padding: 20px;
-                margin-bottom: 10px;
+                margin: 10px 30px 10px 0;
                 background-color: $altLightColor;
-                color: $darkColor;
                 border-radius: 0 10px 10px 0;
-            }
-            &:hover {
-                background-color: $lightColor;
+                transition: 0.2s;
+                a {
+                    color: $darkColor;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+                div {
+                    &.subcategories {
+                        padding: 10px 0 0 20px;
+                        margin-right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        a {
+                            padding-bottom: 10px;
+                            font-family: $mainFontFamily;
+                            color: $darkColor;
+                            &:last-of-type {
+                                padding-bottom: 0;
+                            }
+                            &:hover {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: $lightColor;
+                }
             }
         }
     }

@@ -14,6 +14,12 @@ const Menu = () => {
         { id: 5, name: 'Settings', path: '/settings' },
         { id: 6, name: 'Contact', path: '/contact' }
     ];
+    const flashcardFilters = [
+        { id: 1, name: 'All the categories', path: '/flashcards' },
+        { id: 2, name: 'To practice in 1 week', path: '/flashcards' },
+        { id: 3, name: 'To practice in 1 month', path: '/flashcards' },
+        { id: 4, name: 'To practice in 6 months', path: '/flashcards' }
+    ];
     const currentPage = useLocation();
     const handleOpenMenu = () => {
         setMenuIsOpen(true);
@@ -27,6 +33,7 @@ const Menu = () => {
             {(menuIsOpen) && (
                 <MenuViews
                     menuItems={menuItems}
+                    flashcardFilters={flashcardFilters}
                     currentPage={currentPage}
                     handleCloseMenu={handleCloseMenu}
                 />

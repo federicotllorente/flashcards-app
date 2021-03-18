@@ -15,10 +15,21 @@ const MenuViews = props => {
             </div>
             <div className="menu__links">
                 {props.menuItems.map(el =>
-                    (props.currentPage.pathname === el.path) ? (
-                        <Link key={el.id} className="currentPage" to={el.path}>{el.name}</Link>
+                    (props.currentPage.pathname.includes('/flashcards') && props.currentPage.pathname === el.path) ? (
+                        <div className="currentPage" key={el.id}>
+                            <Link to={el.path}>{el.name}</Link>
+                            <div className="subcategories">
+                                {props.flashcardFilters.map(el => <Link key={el.id} to={el.path}>{el.name}</Link>)}
+                            </div>
+                        </div>
+                    ) : (props.currentPage.pathname === el.path) ? (
+                        <div className="currentPage" key={el.id}>
+                            <Link to={el.path}>{el.name}</Link>
+                        </div>
                     ) : (
-                        <Link key={el.id} to={el.path}>{el.name}</Link>
+                        <div key={el.id}>
+                            <Link to={el.path}>{el.name}</Link>
+                        </div>
                     )
                 )}
             </div>
