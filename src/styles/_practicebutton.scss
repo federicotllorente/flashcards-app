@@ -1,0 +1,22 @@
+.practice_button {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    font-family: $titleFontFamily;
+    font-size: $h2FontSize;
+    background-color: $primaryColor;
+    color: $altLightColor;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 $primaryColorWOpacity;
+    img {
+        margin-right: 10px;
+        width: 20px;
+        height: auto;
+    }
+}

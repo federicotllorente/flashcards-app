@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Menu from './Menu';
+import PracticeButton from './PracticeButton';
 
 const Layout = props => {
     return (
         <React.Fragment>
             <Menu />
-            <h3>And this the profile details</h3>
-            <h3>And this one the 'Practice' button</h3>
+            <PracticeButton />
             {props.children}
         </React.Fragment>
     );
