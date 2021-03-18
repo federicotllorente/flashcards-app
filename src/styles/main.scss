@@ -2,6 +2,7 @@
 $primaryColor: #cb3840;
 $primaryColorWOpacity: #cb383f62;
 $altPrimaryColor: #1c7664;
+$altPrimaryColorWOpacity: #1c76645b;
 $secondaryColor: #013460;
 $secondaryColorWOpacity: #01346065;
 $darkColor: #2e303f;
@@ -24,6 +25,57 @@ $mainFontFamily: "Roboto", sans-serif;
 $breakpointMobile: 425px;
 $breakpointTablet: 820px;
 $breakpointDesktop: 1024px;
+
+// Mixins
+@mixin page_wrapper {
+    padding: 20px 20px 80px;
+    background-image: url(../img/BG_fig1.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+@mixin card1 {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: $darkColor;
+    color: $altLightColor;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 $darkColorWOpacity;
+    h1, h2, h3, h4, h5 {
+        padding-bottom: 10px;
+    }
+    p {
+        padding-bottom: 10px;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+}
+@mixin card2 {
+    @include card1;
+    h3 {
+        font-family: $mainFontFamily;
+        font-size: $mainFontSize;
+        font-weight: 400;
+    }
+    span {
+        font-family: $titleFontFamily;
+        font-size: $hugeFontSize;
+    }
+}
+@mixin green_button {
+    padding: 10px 20px;
+    font-family: $titleFontFamily;
+    background-color: $altPrimaryColor;
+    color: $altLightColor;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 $altPrimaryColorWOpacity;
+}
+@mixin red_button {
+    @include green_button;
+    background-color: $primaryColor;
+    box-shadow: 0 0 20px 0 $primaryColorWOpacity;
+}
 
 // Reset default styles
 * {
@@ -69,3 +121,4 @@ body {
 @import '_menu.scss';
 @import '_practicebutton.scss';
 @import '_homepage.scss';
+@import '_categories.scss';

@@ -1,0 +1,31 @@
+.category {
+    @include page_wrapper;
+    &__header {
+        padding: 20px 0 0;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            padding-bottom: 10px;
+        }
+        button {
+            @include green_button;
+        }
+    }
+    &__list {
+        a {
+            color: $altLightColor;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        &__item {
+            @include card2;
+            span {
+                font-size: $h1FontSize;
+                span {
+                    font-size: $h2FontSize;
+                }
+            }
+        }
+    }
+}
