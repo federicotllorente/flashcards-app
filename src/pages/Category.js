@@ -25,16 +25,20 @@ const Category = () => {
             </div>
             <div className="category__card_list">
                 <div className="category__card_list__item category__card_list__item--add">
-                    <img src={addCardButton} alt="Add Card Button" />
-                    <p>Add a new card</p>
+                    <Link to={`flashcards/${path.path}/add`}>
+                        <img src={addCardButton} alt="Add Card Button" />
+                        <p>Add a new card</p>
+                    </Link>
                 </div>
                 {cardList.map(el => (
                     <div key={el.id} className="category__card_list__item">
-                        <p>{el.cardTitle}</p>
+                        <Link to={`flashcards/${el.id}`}>
+                            <p>{el.cardTitle}</p>
+                        </Link>
                     </div>
                 ))}
                 {(cardList.length === 0) && (
-                    <p><Link to={`flashcards/${path.path}/add`}>Add a new card!</Link></p>
+                    <p>Oh! It seems that you don't have any cards in this category yet. Let's change that <Link to={`flashcards/${path.path}/add`}>adding a new card</Link>!</p>
                 )}
             </div>
         </div>

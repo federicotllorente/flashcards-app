@@ -15,7 +15,7 @@ const MenuViews = props => {
             </div>
             <div className="menu__links">
                 {props.menuItems.map(el =>
-                    (props.currentPage.pathname.includes('/flashcards') && props.currentPage.pathname === el.path) ? (
+                    (props.currentPage.pathname.includes('/flashcards') && el.path === '/flashcards') ? (
                         <div className="currentPage" key={el.id}>
                             <Link to={el.path}>{el.name}</Link>
                             <div className="subcategories">

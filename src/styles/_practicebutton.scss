@@ -1,18 +1,29 @@
 .practice_button {
     @include red_button;
-    padding: 15px 30px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     z-index: 2;
     font-size: $h2FontSize;
     border-radius: 20px;
-    img {
-        margin-right: 10px;
-        width: 20px;
-        height: auto;
+    a {
+        width: 100%;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $altLightColor;
+        img {
+            margin-right: 10px;
+            width: 20px;
+            height: auto;
+        }
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
