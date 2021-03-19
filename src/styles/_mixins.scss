@@ -1,0 +1,131 @@
+@mixin page_wrapper {
+    padding: 20px 20px 80px;
+    background-image: url(../img/BG_fig1.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+// Cards
+@mixin card1 {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: $darkColor;
+    color: $altLightColor;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 $darkColorWOpacity;
+    h1, h2, h3, h4, h5 {
+        padding-bottom: 10px;
+    }
+    p {
+        padding-bottom: 10px;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@mixin card2 {
+    @include card1;
+    h3 {
+        font-family: $mainFontFamily;
+        font-size: $mainFontSize;
+        font-weight: 400;
+    }
+    span {
+        font-family: $titleFontFamily;
+        font-size: $hugeFontSize;
+    }
+}
+
+@mixin card2_link {
+    @include card2;
+    padding: 0;
+    display: flex;
+    a {
+        width: 100%;
+        padding: 20px;
+        color: $altLightColor;
+    }
+}
+
+@mixin card3 {
+    width: 100%;
+    min-height: 200px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 $darkColorWOpacity;
+    background-color: $darkColor;
+    color: $altLightColor;
+}
+
+@mixin card3_link {
+    @include card3;
+    padding: 0;
+    a {
+        width: 100%;
+        height: 200px;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        color: $altLightColor;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+// Buttons
+@mixin green_button {
+    padding: 10px 20px;
+    font-family: $titleFontFamily;
+    font-size: $mainFontSize;
+    background-color: $altPrimaryColor;
+    color: $altLightColor;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 $altPrimaryColorWOpacity;
+}
+
+@mixin red_button {
+    @include green_button;
+    background-color: $primaryColor;
+    box-shadow: 0 0 20px 0 $primaryColorWOpacity;
+}
+
+@mixin blue_button {
+    @include green_button;
+    background-color: $secondaryColor;
+    box-shadow: 0 0 20px 0 $secondaryColorWOpacity;
+}
+
+// Inputs
+@mixin input_text {
+    padding: 10px;
+    margin: 10px 0 20px;
+    background-color: transparent;
+    color: $darkColor;
+    font-family: $titleFontFamily;
+    font-size: $mainFontSize;
+    border: 2px solid $darkColor;
+    border-radius: 10px;
+    &::placeholder {
+        color: $darkColor;
+        opacity: 60%;
+    }
+}
+
+@mixin textarea {
+    @include input_text;
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,59 @@
+.new_card {
+    @include page_wrapper;
+    padding-bottom: 10px;
+    h1 {
+        padding-bottom: 10px;
+    }
+    &__header {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            padding: 10px 0;
+            span {
+                font-style: italic;
+            }
+        }
+        &__add_button {
+            @include green_button;
+            margin: 0 0 10px;
+        }
+        &__cancel_button {
+            @include red_button;
+            margin: 0 0 20px;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        input {
+            @include input_text;
+            margin: 0 0 10px;
+        }
+        &__body {
+            textarea {
+                @include textarea;
+                margin: 0 0 20px;
+            }
+            &__preview {
+                display: flex;
+                flex-direction: column;
+                &__item {
+                    @include card3;
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+    &__example {
+        margin: 10px 0;
+        h3 {
+            padding-bottom: 10px;
+        }
+        p {
+            padding-bottom: 10px;
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -5,7 +5,8 @@ import Layout from './Layout';
 import Home from '../pages/Home';
 import Categories from '../pages/Categories';
 import Category from '../pages/Category';
-import Card from '../pages/Card';
+import NewCard from '../pages/NewCard';
+import CardDetails from '../pages/CardDetails';
 import Practice from '../pages/Practice';
 import Profile from '../pages/Profile';
 import Settings from '../pages/Settings';
@@ -20,7 +21,8 @@ const App = () => {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/flashcards" component={Categories} />
                     <Route exact path="/flashcards/:path" component={Category} />
-                    <Route exact path="/flashcards/:id" component={Card} />
+                    <Route exact path="/flashcards/:path/add" component={NewCard} />
+                    <Route exact path="/flashcards/:id" component={CardDetails} />
                     <Route exact path="/practice" component={Practice} />
                     <Route exact path="/profile" component={Profile} />
                     <Route exact path="/settings" component={Settings} />
