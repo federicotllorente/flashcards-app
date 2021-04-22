@@ -27,6 +27,9 @@ const Menu = () => {
     const handleCloseMenu = () => {
         setMenuIsOpen(false);
     };
+    let locationLogin = (currentPage.pathname.includes('/login'));
+    let locationRegister = (currentPage.pathname.includes('/register'));
+    if (locationLogin || locationRegister) return null;
     return (
         <React.Fragment>
             <MenuHeaderViews handleOpenMenu={handleOpenMenu} />

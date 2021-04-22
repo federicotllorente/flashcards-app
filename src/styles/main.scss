@@ -40,7 +40,6 @@ html {
 }
 
 body {
-    margin-top: 88px;
     color: $darkColor;
     font-family: $mainFontFamily;
     font-size: $mainFontSize;
@@ -75,3 +74,4 @@ body {
 @import '_homepage.scss';
 @import '_categories.scss';
 @import '_newcard.scss';
+@import '_login-register.scss';

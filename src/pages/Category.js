@@ -15,9 +15,7 @@ const Category = () => {
                 <h1>This is your flashcard collection</h1>
                 <div className="category__header">
                     <h2>All cards in <span>{path.path}</span></h2>
-                    <button className="category__header__filter_button">
-                        Filter cards
-                    </button>
+                    <button className="category__header__filter_button">Filter cards</button>
                     <input
                         type="text"
                         name="search_cards"
@@ -34,9 +32,7 @@ const Category = () => {
                     </div>
                     {cardList.map(el => (
                         <div key={el.id} className="category__card_list__item">
-                            <Link to={`${el.id}`}>
-                                <p>{el.cardTitle}</p>
-                            </Link>
+                            <Link to={`${el.id}`}><p>{el.cardTitle}</p></Link>
                         </div>
                     ))}
                     {(cardList.length === 0) && (

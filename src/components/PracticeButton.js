@@ -5,9 +5,11 @@ import PracticeBtnImage from '../img/Burger Menu Button.png';
 
 const PracticeButton = () => {
     const location = useLocation();
-    if (location.pathname.includes('/flashcards') && location.pathname.includes('/add')) {
-        return null;
-    }
+    let locationFlashcards = (location.pathname.includes('/flashcards'));
+    let locationAdd = (location.pathname.includes('/add'));
+    let locationLogin = (location.pathname.includes('/login'));
+    let locationRegister = (location.pathname.includes('/register'));
+    if ((locationFlashcards && locationAdd) || locationLogin || locationRegister) return null;
     return (
         <div className="practice_button">
             <Link to="/practice">
