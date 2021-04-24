@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import PracticeBtnImage from '../img/Burger Menu Button.png';
 
 const PracticeButton = (): JSX.Element | null => {
-    const location = useLocation(); // See this
+    const location = useLocation<{ pathname: string }>();
     let locationFlashcards: boolean = (location.pathname.includes('/flashcards'));
     let locationAdd: boolean = (location.pathname.includes('/add'));
     let locationLogin: boolean = (location.pathname.includes('/login'));

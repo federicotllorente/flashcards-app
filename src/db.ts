@@ -1,11 +1,6 @@
-interface CardList {
-    id: number;
-    cardTitle: string;
-    cardContent: string;
-    categoryId: number;
-};
+import { ICategory, ICard } from './interfaces-types';
 
-const cardList: CardList[] = [
+const cardList: ICard[] = [
     {
         id: 1,
         cardTitle: 'Lorem ipsum dolor sit amet',
@@ -104,14 +99,7 @@ const cardList: CardList[] = [
     }
 ];
 
-interface CategoryList {
-    id: number;
-    name: string;
-    path: string;
-    cards: number | undefined;
-};
-
-const categoryList: CategoryList[] = [
+const categoryList: ICategory[] = [
     { id: 1, name: 'Category name 1', path: '/cat1', cards: undefined },
     { id: 2, name: 'Category name 2', path: '/cat2', cards: undefined },
     { id: 3, name: 'Category name 3', path: '/cat3', cards: undefined },
@@ -120,12 +108,12 @@ const categoryList: CategoryList[] = [
 ];
 
 for (let i: number = 0; i < categoryList.length; i++) {
-    const cat: CategoryList = categoryList[i];
-    let count: CardList[] = cardList.filter(card => card.categoryId === cat.id);
+    const cat: ICategory = categoryList[i];
+    let count: ICard[] = cardList.filter(card => card.categoryId === cat.id);
     cat.cards = count.length;
 }
 
-const cardsPerCategory = (catFilter: number): CardList[] => {
+const cardsPerCategory = (catFilter: number): ICard[] => {
     return cardList.filter(card =>
         card.categoryId === catFilter
     );

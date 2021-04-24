@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { MenuItem, FlashcardFilter } from '../interfaces-types';
+import { IMenuItem, IFlashcardFilter } from '../interfaces-types';
 import MenuHeaderViews from '../views/MenuHeaderViews';
 import MenuViews from '../views/MenuViews';
 
 const Menu = (): JSX.Element | null => {
     const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
-    const menuItems: MenuItem[] = [
+    const menuItems: IMenuItem[] = [
         { id: 1, name: 'Dashboard', path: '/' },
         { id: 2, name: 'Flashcards', path: '/flashcards' },
         { id: 3, name: 'Practice', path: '/practice' },
@@ -15,13 +15,13 @@ const Menu = (): JSX.Element | null => {
         { id: 5, name: 'Settings', path: '/settings' },
         { id: 6, name: 'Contact', path: '/contact' }
     ];
-    const flashcardFilters: FlashcardFilter[] = [
+    const flashcardFilters: IFlashcardFilter[] = [
         { id: 1, name: 'All the categories', path: '/flashcards' },
         { id: 2, name: 'To practice in 1 week', path: '/flashcards' },
         { id: 3, name: 'To practice in 1 month', path: '/flashcards' },
         { id: 4, name: 'To practice in 6 months', path: '/flashcards' }
     ];
-    const currentPage = useLocation<{ pathname: string }>(); // See this
+    const currentPage = useLocation<{ pathname: string }>();
     const handleOpenMenu = (): void => {
         setMenuIsOpen(true);
     };

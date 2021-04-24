@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const NewCard = () => {
-    const [cardTitle, setCardTitle] = useState('This is the card title');
-    const [cardContent, setCardContent] = useState('This is the card content/description');
+    const [cardTitle, setCardTitle] = useState<string>('This is the card title');
+    const [cardContent, setCardContent] = useState<string>('This is the card content/description');
     const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         setCardTitle(e.target.value);
     };
     const handleTextareaChange: React.ChangeEventHandler<HTMLTextAreaElement> = e => {
         setCardContent(e.target.value);
     };
-    const path: { path: string } = useParams();
+    const path = useParams<{ path: string }>();
     return (
         <div className="new_card">
             <h1>Create a new flashcard</h1>

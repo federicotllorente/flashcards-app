@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { MenuItem, FlashcardFilter } from '../interfaces-types';
+import { IMenuItem, IFlashcardFilter } from '../interfaces-types';
 import CloseMenuButton from '../img/Close Burger Menu Button.png';
 import Logo from '../img/Logo light.png';
 
 type MenuViewsProps = {
-    menuItems: MenuItem[];
-    flashcardFilters: FlashcardFilter[];
+    menuItems: IMenuItem[];
+    flashcardFilters: IFlashcardFilter[];
     currentPage: { pathname: string };
     handleCloseMenu: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const MenuViews = ({ menuItems, flashcardFilters, currentPage, handleCloseMenu }: MenuViewsProps): JSX.Element => {
+const MenuViews = (props: MenuViewsProps): JSX.Element => {
+    const { menuItems, flashcardFilters, currentPage, handleCloseMenu } = props;
     return (
         <div className="menu">
             <div className="menu__header">
