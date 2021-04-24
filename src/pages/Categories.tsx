@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 
 import { categoryList } from '../db';
 
-const Categories = () => {
+const Categories = (): JSX.Element => {
+    interface Category {
+        id: number;
+        name: string;
+        path: string;
+        cards: number | undefined; // See this
+    };
     return (
         <div className="category">
             <h1>This is your flashcard collection</h1>
@@ -14,7 +20,7 @@ const Categories = () => {
                 </button>
             </div>
             <div className="category__list">
-                {categoryList.map(el => (
+                {categoryList.map((el: Category) => (
                     <div key={el.id} className="category__list__item">
                         <Link to={'/flashcards' + el.path}>
                             <h3>{el.name}</h3>

@@ -6,7 +6,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const isDev = (process.env.NODE_ENV === 'development');
-const entry = ['./src/index.js'];
+const entry = ['./src/index.tsx'];
 
 if (isDev) {
     const clientConfig = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true';
@@ -27,7 +27,7 @@ module.exports = {
         minimizer: [new TerserPlugin()]
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     module: {
         rules: [
@@ -36,6 +36,12 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                use: {
+                    loader: 'ts-loader'
                 }
             },
             {

@@ -1,11 +1,11 @@
-const db = require('mongoose');
+import db from 'mongoose';
 
 db.Promise = global.Promise;
 
-async function connect(uri) {
+async function connect(uri: string) {
     await db.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log(`[db] Database successfully connected`))
-        .catch(error => console.error(`[db] ${error}`));
+        .catch((error: string | {}) => console.error(`[db] ${error}`));
 }
 
-module.exports = connect;
+export default connect;

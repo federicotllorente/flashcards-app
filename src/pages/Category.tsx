@@ -6,7 +6,8 @@ import { categoryList, cardsPerCategory } from '../db';
 import addCardButton from '../img/Icon Add.png';
 
 const Category = () => {
-    const path = useParams();
+    interface Path { path: string; };
+    const path: Path = useParams(); // See this
     const currentCat = categoryList.find(cat => cat.path.substring(1) === path.path);
     if (currentCat) {
         const cardList = cardsPerCategory(currentCat.id);

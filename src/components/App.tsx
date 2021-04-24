@@ -15,7 +15,7 @@ import Settings from '../pages/Settings';
 import Contact from '../pages/Contact';
 import NotFound from '../pages/NotFound';
 
-const App = () => {
+const App = (): JSX.Element => {
     return (
         <BrowserRouter>
             <Layout>

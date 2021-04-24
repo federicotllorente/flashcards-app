@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardDetails = () => {
+const CardDetails = (): JSX.Element => {
     return (
         <h1>Card Details</h1>
     );
