@@ -1,4 +1,6 @@
-const cardList = [
+import { ICategory, ICard } from './interfaces-types';
+
+const cardList: ICard[] = [
     {
         id: 1,
         cardTitle: 'Lorem ipsum dolor sit amet',
@@ -97,7 +99,7 @@ const cardList = [
     }
 ];
 
-const categoryList = [
+const categoryList: ICategory[] = [
     { id: 1, name: 'Category name 1', path: '/cat1', cards: undefined },
     { id: 2, name: 'Category name 2', path: '/cat2', cards: undefined },
     { id: 3, name: 'Category name 3', path: '/cat3', cards: undefined },
@@ -105,17 +107,16 @@ const categoryList = [
     { id: 5, name: 'Category name 5', path: '/cat5', cards: undefined }
 ];
 
-for (let i = 0; i < categoryList.length; i++) {
-    const cat = categoryList[i];
-    let count = cardList.filter(card => card.categoryId === cat.id);
+for (let i: number = 0; i < categoryList.length; i++) {
+    const cat: ICategory = categoryList[i];
+    let count: ICard[] = cardList.filter(card => card.categoryId === cat.id);
     cat.cards = count.length;
 }
 
-const cardsPerCategory = catFilter => {
-    const cardsFiltered = cardList.filter(card =>
+const cardsPerCategory = (catFilter: number): ICard[] => {
+    return cardList.filter(card =>
         card.categoryId === catFilter
     );
-    return cardsFiltered;
 };
 
 export { cardList, categoryList, cardsPerCategory };

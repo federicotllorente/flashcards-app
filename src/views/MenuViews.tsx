@@ -1,28 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { IMenuItem, IFlashcardFilter } from '../interfaces-types';
 import CloseMenuButton from '../img/Close Burger Menu Button.png';
 import Logo from '../img/Logo light.png';
 
-const MenuViews = props => {
+type MenuViewsProps = {
+    menuItems: IMenuItem[];
+    flashcardFilters: IFlashcardFilter[];
+    currentPage: { pathname: string };
+    handleCloseMenu: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const MenuViews = (props: MenuViewsProps): JSX.Element => {
+    const { menuItems, flashcardFilters, currentPage, handleCloseMenu } = props;
     return (
         <div className="menu">
             <div className="menu__header">
-                <button id="close_menu_btn" onClick={props.handleCloseMenu}>
+                <button id="close_menu_btn" onClick={handleCloseMenu}>
                     <img src={CloseMenuButton} alt="Close Menu Button" />
                 </button>
                 <img className="menu__header__logo" src={Logo} alt="Logo" />
             </div>
             <div className="menu__links">
-                {props.menuItems.map(el =>
-                    (props.currentPage.pathname.includes('/flashcards') && el.path === '/flashcards') ? (
+                {menuItems.map(el =>
+                    (currentPage.pathname.includes('/flashcards') && el.path === '/flashcards') ? (
                         <div className="currentPage" key={el.id}>
                             <Link to={el.path}>{el.name}</Link>
                             <div className="subcategories">
-                                {props.flashcardFilters.map(el => <Link key={el.id} to={el.path}>{el.name}</Link>)}
+                                {flashcardFilters.map(el => <Link key={el.id} to={el.path}>{el.name}</Link>)}
                             </div>
                         </div>
-                    ) : (props.currentPage.pathname === el.path) ? (
+                    ) : (currentPage.pathname === el.path) ? (
                         <div className="currentPage" key={el.id}>
                             <Link to={el.path}>{el.name}</Link>
                         </div>

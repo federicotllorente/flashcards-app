@@ -1,16 +1,17 @@
-require('dotenv').config();
-const path = require('path');
+import dotenv from 'dotenv';
+dotenv.config();
 
-const express = require('express');
-const webpack = require('webpack');
-const helmet = require('helmet');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const router = require('./server/router');
-const connect = require('./server/db');
+import path from 'path';
+import express from 'express';
+import webpack from 'webpack';
+import helmet from 'helmet';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import router from './server/router';
+import connect from './server/db';
 
-const app = express();
-const port = process.env.PORT || 3000;
+const app: express.Application = express();
+const port: string | number = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'development') {
     console.log('[server] Development environment');
@@ -29,7 +30,7 @@ if (process.env.NODE_ENV === 'development') {
     app.disable('x-powered-by'); // To prevent possible attacks to certain dependencies we're using
 }
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri: string = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 connect(uri); // Connect to the database
 
 app.use(cors()); // To enable all CORS requests
@@ -38,19 +39,13 @@ app.use(bodyParser.urlencoded({ extended: false })); // To parse URL Encoded req
 app.use('/api', router); // To manage all the API routes (like '/api/projects' or '/api/technologies')
 
 // To serve the statics after Webpack compiles the React App
-app.get('*', (req, res) => {
+app.get('*', (req: express.Request, res: express.Response) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // To manage the contact form and its POST HTTP requests
-app.post('/contact', (req, res) => {
-    sendMessage(req.body, res);
-});
+// app.post('/contact', (req, res) => {
+//     // Do something
+// });
 
-app.listen(port, err => {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log(`Server running on port ${port}`);
-    }
-});
+app.listen(port, (): void => console.log(`Server running on port ${port}`));

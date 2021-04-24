@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import OpenMenuButton from '../img/Burger Menu Button.png';
 import Logo from '../img/Logo light.png';
 
-const MenuHeaderViews = props => {
+type MenuHeaderViewsProps = {
+    handleOpenMenu: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const MenuHeaderViews = ({ handleOpenMenu }: MenuHeaderViewsProps): JSX.Element => {
     return (
         <div className="menu menu--closed">
             <div className="menu__header">
-                <button id="open_menu_btn" onClick={props.handleOpenMenu}>
+                <button id="open_menu_btn" onClick={handleOpenMenu}>
                     <img src={OpenMenuButton} alt="Open Menu Button" />
                 </button>
                 <Link to="/">
