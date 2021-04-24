@@ -2,11 +2,15 @@
 
 ## Introduction
 
-This project is mainly made with [React.js](https://reactjs.org/) and [Sass](https://sass-lang.com/), and it was initialized with [Create React App](https://github.com/facebook/create-react-app). If you like this project, feel free to clone this repository and update the App or make it better!
+This project is made with [TypeScript](https://www.typescriptlang.org/) and with the freameworks and libraries: [React.js](https://reactjs.org/) for the Frontend, Nodejs and [Express](https://expressjs.com/) for the Backend, and [Sass](https://sass-lang.com/) as a CSS Preprocessor. Nonetheless, at the beginning of its development is was coded with JavaScript instead of TypeScript, and also it was initialized with [Create React App](https://github.com/facebook/create-react-app).
+
+For the database I used MongoDB, and the services of [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Also the App uses [Webpack](https://webpack.js.org/) for compiling all the code, and [Babel](https://babeljs.io/) for transpiling it to a JavaScript version that can be properly interpretated by the most of the browsers.
+
+Remember that if you like this project, feel free to clone this repository, update the App or make it better, and share it with me! I'll be happy to know what you can do.
 
 ## More about this project
 
-This is a Flashcards App, for studying with the 'active call' method. This technique consists particularly in repeting a memorization exercise with flashcards in a specific period of time. The student need to 'answer' these flashcards, so those that are correctly answered will be shown less than those ones that were answered incorrectly.
+This is a Flashcards App, for studying with the 'active call' method, or also called the 'spaced repetition' method. This technique consists particularly in repeting a memorization exercise with flashcards in a specific period of time. The student need to 'answer' these flashcards, so those that are correctly answered will be shown less than those ones that were answered incorrectly.
 
 This allows the student to remember better and learn those concepts and ideas in the flashcards. On one side of the card, there's the keyword (the concept or idea), and on the other one there's an explanation of the concept.
 
@@ -20,7 +24,11 @@ I hope you enjoy this project. See you coding!
 
 ## Introducción (ESP)
 
-Este proyecto está creado principalmente con [React.js](https://reactjs.org/) y [Sass](https://sass-lang.com/), y a su vez fue inicializado con [Create React App](https://github.com/facebook/create-react-app). Si te gusta este proyecto, ¡siéntete libre de clonarlo y actualizar la App o mejorarla!
+Este proyecto está creado con [TypeScript](https://www.typescriptlang.org/) y con los frameworks y librerías: [React.js](https://reactjs.org/) para el Frontend, Nodejs y [Express](https://expressjs.com/) para el Backend, y [Sass](https://sass-lang.com/) como preprocesador CSS. Sin embargo, al principio de su desarrollo fue programado con JavaScript en vez de TypeScript, y también fue inicializado con [Create React App](https://github.com/facebook/create-react-app).
+
+Para la base de datos utilicé MongoDB, y los servicios de [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). La App también usa [Webpack](https://webpack.js.org/) para compilar todo el código, y [Babel](https://babeljs.io/) para transpilarlo a una versión de JavaScript interpretable por la mayoría de navegadores.
+
+Recuerda que si te gusta este proyecto, ¡siéntete libre de clonarlo y actualizar la App o mejorarla! Si lo haces envíamelo, ¡me encantará saber lo que puedes lograr!
 
 ## Más acerca de este proyecto
 
