@@ -10,7 +10,7 @@ Remember that if you like this project, feel free to clone this repository, upda
 
 ## More about this project
 
-This is a Flashcards App, for studying with the 'active call' method, or also called the 'spaced repetition' method. This technique consists particularly in repeting a memorization exercise with flashcards in a specific period of time. The student need to 'answer' these flashcards, so those that are correctly answered will be shown less than those ones that were answered incorrectly.
+This is a Flashcards App, for studying with the 'active recall' method, or also called the 'spaced repetition' method. This technique consists particularly in repeting a memorization exercise with flashcards in a specific period of time. The student need to 'answer' these flashcards, so those that are correctly answered will be shown less than those ones that were answered incorrectly.
 
 This allows the student to remember better and learn those concepts and ideas in the flashcards. On one side of the card, there's the keyword (the concept or idea), and on the other one there's an explanation of the concept.
 
