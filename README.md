@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is made with [TypeScript](https://www.typescriptlang.org/) and with the freameworks and libraries: [React.js](https://reactjs.org/) for the Frontend, Nodejs and [Express](https://expressjs.com/) for the Backend, and [Sass](https://sass-lang.com/) as a CSS Preprocessor. Nonetheless, at the beginning of its development is was coded with JavaScript instead of TypeScript, and also it was initialized with [Create React App](https://github.com/facebook/create-react-app).
+This project is made with [TypeScript](https://www.typescriptlang.org/) and with the frameworks and libraries: [React.js](https://reactjs.org/) for the Frontend, Nodejs and [Express](https://expressjs.com/) for the Backend, and [Sass](https://sass-lang.com/) as a CSS Preprocessor. Nonetheless, at the beginning of its development is was coded with JavaScript instead of TypeScript, and also it was initialized with [Create React App](https://github.com/facebook/create-react-app).
 
 For the database I used MongoDB, and the services of [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Also the App uses [Webpack](https://webpack.js.org/) for compiling all the code, and [Babel](https://babeljs.io/) for transpiling it to a JavaScript version that can be properly interpretated by the most of the browsers.
 
